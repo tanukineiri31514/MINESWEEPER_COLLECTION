@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1120">
+  <title>MINESWEEPER COLLECTION</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 40px 20px; color: #edf3fb;
+      font-family: system-ui, "Noto Sans JP", sans-serif;
+      background: radial-gradient(ellipse at 50% 0%, #1a3445 0%, #0b1120 65%);
+    }
+    main { width: min(880px, 100%); text-align: center; }
+    .eyebrow { margin: 0 0 12px; color: #66d9c3; font-size: 11px; font-weight: 800; letter-spacing: .22em; }
+    h1 { margin: 0; font-size: clamp(28px, 6vw, 52px); letter-spacing: .025em; line-height: 1.1; }
+    .subtitle { margin: 16px 0 38px; color: #9aabc2; font-size: 14px; }
+    .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; text-align: left; }
+    .game-card {
+      display: block; overflow: hidden; text-decoration: none; color: inherit;
+      background: #151f31; border: 1px solid #2c3b53; border-radius: 18px;
+      transition: transform .18s, border-color .18s, box-shadow .18s;
+    }
+    .game-card:hover, .game-card:focus-visible {
+      transform: translateY(-5px); border-color: #66d9c3;
+      box-shadow: 0 18px 40px #0005; outline: none;
+    }
+    .preview { height: 180px; display: grid; place-items: center; background: #101b2c; }
+    .square-board { display: grid; grid-template-columns: repeat(5, 25px); gap: 3px; transform: rotate(-8deg); }
+    .square-board span { width: 25px; height: 25px; background: #718096; border: 1px solid #9aa8b9; }
+    .square-board span:nth-child(3n) { background: #dce3eb; }
+    .square-board span:nth-child(8)::after { content: "2"; color: #2464d8; font-weight: 800; display: grid; place-items: center; }
+    .hex-board { display: grid; grid-template-columns: repeat(5, 30px); gap: 1px 2px; transform: rotate(-8deg); }
+    .hex-board span { width: 30px; height: 34px; background: #718096; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+    .hex-board span:nth-child(5n + 1) { background: #dce3eb; }
+    .hex-board span:nth-child(9) { background: #66d9c3; }
+    .details { padding: 22px 24px 24px; }
+    .tag { font-size: 11px; font-weight: 800; letter-spacing: .12em; color: #66d9c3; }
+    h2 { margin: 8px 0; font-size: clamp(20px, 3vw, 25px); }
+    .description { color: #9aabc2; font-size: 13px; line-height: 1.7; min-height: 44px; }
+    .play { display: inline-block; margin-top: 18px; color: #66d9c3; font-size: 13px; font-weight: 800; }
+    footer { margin-top: 36px; color: #6f829c; font-size: 11px; letter-spacing: .08em; }
+    @media (max-width: 620px) { .games { grid-template-columns: 1fr; } .preview { height: 140px; } .subtitle { margin-bottom: 28px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A DIFFERENT KIND OF MINESWEEPER</p>
+    <h1>MINESWEEPER COLLECTION</h1>
+    <p class="subtitle">いつもと違うマインスイーパー。遊びたいルールを選んでください。</p>
+
+    <div class="games">
+      <!-- 公開先が別リポジトリの場合は href を GitHub Pages のURLに変更 -->
+      <a class="game-card" href="./24SWEEP/index.html">
+        <div class="preview" aria-hidden="true">
+          <div class="square-board">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="details">
+          <span class="tag">01 / WIDE RANGE</span>
+          <h2>24 MINESWEEPER</h2>
+          <p class="description">周囲5×5、最大24マスの情報から爆弾を推理するモード。</p>
+          <span class="play">プレイする →</span>
+        </div>
+      </a>
+
+      <a class="game-card" href="./POLY/index.html">
+        <div class="preview" aria-hidden="true">
+          <div class="hex-board">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="details">
+          <span class="tag">02 / POLYGON GRID</span>
+          <h2>POLYGON MINESWEEPER</h2>
+          <p class="description">五角形・六角形の特殊な盤面で爆弾を推理するモード。</p>
+          <span class="play">プレイする →</span>
+        </div>
+      </a>
+    </div>
+    <footer>MINESWEEPER COLLECTION · Created by tanuki31514</footer>
+  </main>
+</body>
+</html>
